@@ -1,0 +1,4 @@
+﻿CREATE FUNCTION [dbo].[getNextEmployeeID]() RETURNS INT AS
+BEGIN
+ RETURN (SELECT MAX(CAST(mwEmployeeID AS INT))+1 FROM MWEmployees)
+END

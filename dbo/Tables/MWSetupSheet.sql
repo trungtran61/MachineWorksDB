@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[MWSetupSheet] (
+    [mwHID]                 INT             IDENTITY (1, 1) NOT NULL,
+    [mwProgramNumber]       NVARCHAR (50)   NULL,
+    [mwPartNumber]          NVARCHAR (50)   NULL,
+    [mwRevision]            NVARCHAR (100)  NULL,
+    [mwOP]                  NVARCHAR (5)    NULL,
+    [mwMachine]             NVARCHAR (100)  NULL,
+    [mwDate]                DATETIME        NULL,
+    [mwMaterial]            NVARCHAR (255)  NULL,
+    [mwJaws]                NVARCHAR (255)  NULL,
+    [mwPress]               NVARCHAR (255)  NULL,
+    [mwInstruction]         NVARCHAR (1000) NULL,
+    [mwSpecialInstruction]  NVARCHAR (255)  NULL,
+    [mwProgramLocation]     NVARCHAR (300)  NULL,
+    [mwWorkHolding]         NVARCHAR (255)  NULL,
+    [mwWorkHoldingLocation] NVARCHAR (255)  NULL,
+    [mwPressureTorchue]     NVARCHAR (255)  NULL,
+    [mwHotJob]              BIT             CONSTRAINT [DF_MWLatheSS_mwHotJob] DEFAULT ((0)) NULL,
+    [mwStatus]              NVARCHAR (20)   CONSTRAINT [DF_MWLatheSS_mwStatus] DEFAULT ('New') NULL,
+    [mwWH1]                 INT             NULL,
+    [mwWH2]                 INT             NULL,
+    [mwWH3]                 INT             NULL,
+    [mwWH4]                 INT             NULL,
+    [mwWH5]                 INT             NULL,
+    CONSTRAINT [PK_MWLatheSS] PRIMARY KEY CLUSTERED ([mwHID] ASC)
+);
+

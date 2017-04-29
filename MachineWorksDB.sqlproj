@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MachineWorksDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b1a33b74-9700-4c8c-bab4-053f218ba997}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MachineWorksDB</RootNamespace>
+    <AssemblyName>MachineWorksDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\MWCheckList_Task.sql" />
+    <Build Include="dbo\Tables\MWForm.sql" />
+    <Build Include="dbo\Tables\MWCheckList_CompletedDate.sql" />
+    <Build Include="dbo\Tables\MWLog.sql" />
+    <Build Include="dbo\Tables\MWPM.sql" />
+    <Build Include="dbo\Tables\MWMaterials.sql" />
+    <Build Include="dbo\Tables\MWToolInventory_Category.sql" />
+    <Build Include="dbo\Tables\MWTraining_Category.sql" />
+    <Build Include="dbo\Tables\MWToolInventoryCodeColumn.sql" />
+    <Build Include="dbo\Tables\MWSecurityCatA.sql" />
+    <Build Include="dbo\Tables\MWVendor.sql" />
+    <Build Include="dbo\Tables\ConversionRules.sql" />
+    <Build Include="dbo\Tables\MWSecurityCatG.sql" />
+    <Build Include="dbo\Tables\MWToolInventoryColumns.sql" />
+    <Build Include="dbo\Tables\MWMaterial.sql" />
+    <Build Include="dbo\Tables\MWMaterials_Part.sql" />
+    <Build Include="dbo\Tables\MWCustomer.sql" />
+    <Build Include="dbo\Tables\MWEmployees.sql" />
+    <Build Include="dbo\Tables\MWMaterialWIP.sql" />
+    <Build Include="dbo\Tables\MWPartInv.sql" />
+    <Build Include="dbo\Tables\MWInventory.sql" />
+    <Build Include="dbo\Tables\ToolSetupSheet_ToolSetup.sql" />
+    <Build Include="dbo\Tables\MWTool.sql" />
+    <Build Include="dbo\Tables\MWPartInv_Order.sql" />
+    <Build Include="dbo\Tables\ToolSetupGroup.sql" />
+    <Build Include="dbo\Tables\MWMember.sql" />
+    <Build Include="dbo\Tables\MWCheckList_User.sql" />
+    <Build Include="dbo\Tables\MWToolInventory_Audit.sql" />
+    <Build Include="dbo\Tables\MWVendors.sql" />
+    <Build Include="dbo\Tables\MWCheckList_Comment.sql" />
+    <Build Include="dbo\Tables\MWBluePrint.sql" />
+    <Build Include="dbo\Tables\MWExplorer.sql" />
+    <Build Include="dbo\Tables\MWGroup.sql" />
+    <Build Include="dbo\Tables\MWCheckList_Location.sql" />
+    <Build Include="dbo\Tables\MWInspection_ME.sql" />
+    <Build Include="dbo\Tables\MWSpecification.sql" />
+    <Build Include="dbo\Tables\MWCheckList_Operation.sql" />
+    <Build Include="dbo\Tables\Cutting_Method_Template.sql" />
+    <Build Include="dbo\Tables\MWEmployees_Title.sql" />
+    <Build Include="dbo\Tables\MWToolInventory_Status.sql" />
+    <Build Include="dbo\Tables\ToolSetup.sql" />
+    <Build Include="dbo\Tables\MWAddress.sql" />
+    <Build Include="dbo\Tables\ToolSetupSheet_Program.sql" />
+    <Build Include="dbo\Tables\MWImage.sql" />
+    <Build Include="dbo\Tables\ToolSetupSheet.sql" />
+    <Build Include="dbo\Tables\MWCheckList_PartialShip.sql" />
+    <Build Include="dbo\Tables\MWSetupSheet.sql" />
+    <Build Include="dbo\Tables\MWCheckList.sql" />
+    <Build Include="dbo\Tables\Tool_Cutting_Method.sql" />
+    <Build Include="dbo\Tables\MWMachine.sql" />
+    <Build Include="dbo\Tables\MWUOM.sql" />
+    <Build Include="dbo\Tables\MWSecurityApp.sql" />
+    <Build Include="dbo\Tables\Cutting_Method.sql" />
+    <Build Include="dbo\Tables\MWSecurityGrp.sql" />
+    <Build Include="dbo\Tables\MWFiles.sql" />
+    <Build Include="dbo\Tables\MWToolBox.sql" />
+    <Build Include="dbo\Tables\MWCustomerPO.sql" />
+    <Build Include="dbo\Tables\MWTraining_Topic.sql" />
+    <Build Include="dbo\Tables\MWTraining_Title.sql" />
+    <Build Include="dbo\Tables\MWRFQ_Admin.sql" />
+    <Build Include="dbo\Tables\MWSSToolList.sql" />
+    <Build Include="dbo\Tables\MWRFQ.sql" />
+    <Build Include="dbo\Tables\MWTraining.sql" />
+    <Build Include="dbo\Tables\MWFileGrps.sql" />
+    <Build Include="dbo\Tables\MWUser.sql" />
+    <Build Include="dbo\Tables\MWFileLnk.sql" />
+    <Build Include="dbo\Tables\MWHelp.sql" />
+    <Build Include="dbo\Tables\MWCheckList_Note.sql" />
+    <Build Include="dbo\Tables\MWToolInventory.sql" />
+    <Build Include="dbo\Tables\MWConvert_Head.sql" />
+    <Build Include="dbo\Tables\MWLinkedTool.sql" />
+    <Build Include="dbo\Tables\MWConvert_Tail.sql" />
+    <Build Include="dbo\Tables\MWRFQ_User.sql" />
+    <Build Include="dbo\Tables\MWRFQ_Comment.sql" />
+    <Build Include="dbo\Tables\MWCheckList_Department.sql" />
+    <Build Include="dbo\Tables\MWTest.sql" />
+    <Build Include="dbo\Tables\ProcessType.sql" />
+    <Build Include="dbo\Tables\MWTest1.sql" />
+    <Build Include="dbo\Tables\MWRFQ_Department.sql" />
+    <Build Include="dbo\Tables\MWToolTransfer.sql" />
+    <Build Include="dbo\Tables\MWRFQ_Task.sql" />
+    <Build Include="dbo\Tables\MWCheckList_Reserve.sql" />
+    <Build Include="dbo\Tables\MWPartInventory.sql" />
+    <Build Include="dbo\Views\vwStickOutFromJawMinimum.sql" />
+    <Build Include="dbo\Views\vwMaterial.sql" />
+    <Build Include="dbo\Views\vwVendors.sql" />
+    <Build Include="dbo\Views\vwToolsInventory.sql" />
+    <Build Include="dbo\Views\vwProcessType.sql" />
+    <Build Include="dbo\Views\vwCuttingMethod.sql" />
+    <Build Include="dbo\Views\vwUOM.sql" />
+    <Build Include="Security\MWUser.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fnToolDesc.sql" />
+    <Build Include="dbo\Functions\getToolNet.sql" />
+    <Build Include="dbo\Functions\getNextEmployeeID.sql" />
+    <Build Include="dbo\Functions\getNumeric.sql" />
+    <Build Include="dbo\Functions\CSVToTable.sql" />
+    <Build Include="dbo\Functions\getHolder.sql" />
+    <Build Include="dbo\Functions\fnSplitStrings.sql" />
+    <Build Include="dbo\Functions\fnSecCatG.sql" />
+    <Build Include="dbo\Stored Procedures\spGetLookupValues.sql" />
+    <Build Include="dbo\Stored Procedures\CheckOutCheckIn.sql" />
+    <Build Include="dbo\Stored Procedures\spInsertLookupValue.sql" />
+    <Build Include="dbo\Stored Procedures\spGetMachines.sql" />
+    <Build Include="dbo\Stored Procedures\DisposeReStock.sql" />
+    <Build Include="dbo\Stored Procedures\spMaterial.sql" />
+    <Build Include="dbo\Stored Procedures\spSaveConversionRule.sql" />
+    <Build Include="dbo\Stored Procedures\spSecurityCatA_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spSpecification.sql" />
+    <Build Include="dbo\Stored Procedures\spGetRules.sql" />
+    <Build Include="dbo\Stored Procedures\spCatList.sql" />
+    <Build Include="dbo\Stored Procedures\spFileTables.sql" />
+    <Build Include="dbo\Stored Procedures\sp_findsp.sql" />
+    <Build Include="dbo\Stored Procedures\spGetConversionRules.sql" />
+    <Build Include="dbo\Stored Procedures\spCatKey.sql" />
+    <Build Include="dbo\Stored Procedures\ConvertRowValuesToColumn.sql" />
+    <Build Include="dbo\Stored Procedures\spDeleteConversionRule.sql" />
+    <Build Include="dbo\Stored Procedures\spSecCatG_Update.sql" />
+    <Build Include="dbo\Stored Procedures\spCategory_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spToolInventory_AllowEdit.sql" />
+    <Build Include="dbo\Stored Procedures\spMaterial_Search.sql" />
+    <Build Include="dbo\Stored Procedures\spMaterial_D.sql" />
+    <Build Include="dbo\Stored Procedures\spMaterial_Save.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetErrorInfo.sql" />
+    <Build Include="dbo\Stored Procedures\spToolGroupList.sql" />
+    <Build Include="dbo\Stored Procedures\spToolGroupList_Count.sql" />
+    <Build Include="dbo\Stored Procedures\spToolGroupRFQ.sql" />
+    <Build Include="dbo\Stored Procedures\spToolGroupRFQSent.sql" />
+    <Build Include="dbo\Stored Procedures\spCopyToolSetupSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spToolInventorySearch.sql" />
+    <Build Include="dbo\Stored Procedures\spUpdateConvertedToolSetupSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spEmployee_RouterCreator_S.sql" />
+    <Build Include="dbo\Stored Procedures\spUser_RouterCreator_S.sql" />
+    <Build Include="dbo\Stored Procedures\spToolOrderApprove.sql" />
+    <Build Include="dbo\Stored Procedures\spSaveToolSetupGroup.sql" />
+    <Build Include="dbo\Stored Procedures\spToolInventory_AutoLevel.sql" />
+    <Build Include="dbo\Stored Procedures\spSearchToolSetups.sql" />
+    <Build Include="dbo\Stored Procedures\spAddSelectedToolSetupToSetupSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spDeleteToolSetup.sql" />
+    <Build Include="dbo\Stored Procedures\spgetLookup.sql" />
+    <Build Include="dbo\Stored Procedures\spUpdateCuttingMethodTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\spGetCuttingMethodsWithTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\spGetMachine.sql" />
+    <Build Include="dbo\Stored Procedures\spUploadProvenProgram.sql" />
+    <Build Include="dbo\Stored Procedures\spGetUOM.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSSPOperations.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSSPRevisions.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSSPPartNumbers.sql" />
+    <Build Include="dbo\Stored Procedures\spAddCuttingMethodTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\spSaveToolInventoryCodeColumns.sql" />
+    <Build Include="dbo\Stored Procedures\spGetToolInventoryColumnsByCode.sql" />
+    <Build Include="dbo\Stored Procedures\spGetMaterialType.sql" />
+    <Build Include="dbo\Stored Procedures\spGetToolInventoryColumns.sql" />
+    <Build Include="dbo\Stored Procedures\spGetMaterialSize.sql" />
+    <Build Include="dbo\Stored Procedures\spGetImageByCodeId.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSelectedToolInventoryColumns.sql" />
+    <Build Include="dbo\Stored Procedures\spGetCuttingMethod.sql" />
+    <Build Include="dbo\Stored Procedures\spGetCuttingMethodTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\spSecurityY.sql" />
+    <Build Include="dbo\Stored Procedures\spSecurityX.sql" />
+    <Build Include="dbo\Stored Procedures\spEmployee_S.sql" />
+    <Build Include="dbo\Stored Procedures\ToolInventorySearch.sql" />
+    <Build Include="dbo\Stored Procedures\spCopyToolInventoryCodeColumns.sql" />
+    <Build Include="dbo\Stored Procedures\spSaveToolSetupSheet.sql" />
+    <Build Include="dbo\Stored Procedures\ToolInventorySearchSelected.sql" />
+    <Build Include="dbo\Stored Procedures\spGetExternalLocation.sql" />
+    <Build Include="dbo\Stored Procedures\spCustomerPO.sql" />
+    <Build Include="dbo\Stored Procedures\usp_GetToolHolder.sql" />
+    <Build Include="dbo\Stored Procedures\spAddToolSetupSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spNote.sql" />
+    <Build Include="dbo\Stored Procedures\spDelivery_Update.sql" />
+    <Build Include="dbo\Stored Procedures\spChangePWD.sql" />
+    <Build Include="dbo\Stored Procedures\spPassExpired.sql" />
+    <Build Include="dbo\Stored Procedures\spGetToolSetupSheet.sql" />
+    <Build Include="dbo\Stored Procedures\spUserInfo_S.sql" />
+    <Build Include="dbo\Stored Procedures\spVendorList.sql" />
+    <Build Include="dbo\Stored Procedures\spToolOrderList.sql" />
+    <Build Include="dbo\Stored Procedures\spVendorList_S.sql" />
+    <Build Include="dbo\Stored Procedures\spGetSetupSheets.sql" />
+    <Build Include="dbo\Stored Procedures\spProcessType_S.sql" />
+    <Build Include="dbo\Stored Procedures\spSaveToolSetupSheetToolSetups.sql" />
+    <Build Include="dbo\Stored Procedures\spProcessType_S1.sql" />
+    <Build Include="dbo\Stored Procedures\spProcessType_Save.sql" />
+    <Build Include="dbo\Stored Procedures\spExpAcctList.sql" />
+    <Build Include="dbo\Stored Procedures\SplitStringIntoRows.sql" />
+    <Build Include="dbo\Stored Procedures\spGetCuttingMethodWithTemplate.sql" />
+    <Build Include="dbo\Stored Procedures\spGetRecentSetupSheets.sql" />
+    <Build Include="dbo\User Defined Types\ToolSetup.sql" />
+  </ItemGroup>
+</Project>
